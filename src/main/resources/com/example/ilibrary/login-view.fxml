@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.*?>
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.ilibrary.controller.LoginController">
+    <children>
+        <AnchorPane prefHeight="400.0" prefWidth="236.0" style="-fx-background-color: #aaccdd;">
+            <children>
+                <Label layoutX="64.0" layoutY="62.0" prefHeight="35.0" prefWidth="107.0" text="iLibrary">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="18.0" layoutY="136.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../book_img_login.jpg"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="400.0" prefWidth="358.0">
+            <children>
+                <Label layoutX="40.0" layoutY="175.0" prefHeight="26.0" prefWidth="63.0" text="Username">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="40.0" layoutY="236.0" prefHeight="34.0" prefWidth="63.0" text="Password">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="usernameField" layoutX="124.0" layoutY="171.0" opacity="0.81" prefHeight="34.0"
+                           prefWidth="150.0" promptText="Username"/>
+                <PasswordField fx:id="passwordField" layoutX="124.0" layoutY="236.0" opacity="0.8" prefHeight="34.0"
+                               prefWidth="150.0" promptText="Password"/>
+                <Button fx:id="loginButton" layoutX="124.0" layoutY="312.0" mnemonicParsing="false"
+                        onAction="#onLoginClick" prefHeight="34.0" prefWidth="150.0"
+                        style="-fx-background-color: #aaccdd;" text="Login" textFill="WHITE">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Button>
+                <Label fx:id="messageLabel" layoutX="59.0" layoutY="130.0" prefHeight="26.0" prefWidth="258.0"
+                       textFill="#ef5050">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <ImageView fitHeight="115.0" fitWidth="166.0" layoutX="123.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../lock_img_login.jpg"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
+</HBox>

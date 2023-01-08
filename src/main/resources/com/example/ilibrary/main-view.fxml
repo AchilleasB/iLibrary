@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane prefHeight="63.0" prefWidth="700.0" style="-fx-background-color: #aaccdd;">
+            <children>
+                <Label layoutX="399.0" layoutY="46.0" prefHeight="35.0" prefWidth="168.0" text="iLibrary System">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="74.0" fitWidth="124.0" layoutX="576.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../../../book_img_login.jpg" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <TabPane prefHeight="410.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="managementTab" text="Lending/receiving">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="376.0" prefWidth="698.0">
+                            <children>
+                                <Label layoutX="55.0" layoutY="14.0" prefHeight="20.0" prefWidth="64.0" text="Welcome">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="nameLabel" layoutX="126.0" layoutY="14.0" prefHeight="20.0" prefWidth="118.0" text="[name of user]">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Pane layoutX="55.0" layoutY="53.0" prefHeight="300.0" prefWidth="280.0" style="-fx-background-color: #aaccdd;">
+                                    <children>
+                                        <Button fx:id="lendItemButton" layoutX="33.0" layoutY="199.0" mnemonicParsing="false" onAction="#onLendItemClick" prefHeight="35.0" prefWidth="157.0" style="-fx-background-color: #58d310;" text="Lend item" textFill="WHITE">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Button>
+                                        <TextField fx:id="itemCodeLendField" layoutX="34.0" layoutY="29.0" prefHeight="35.0" prefWidth="157.0" promptText="Item code" />
+                                        <TextField fx:id="memberIdLendField" layoutX="35.0" layoutY="88.0" prefHeight="35.0" prefWidth="157.0" promptText="Member identifier" />
+                                        <Label fx:id="lendMessageLabel" layoutX="21.0" layoutY="140.0" prefHeight="35.0" prefWidth="239.0" textFill="#dd000d">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane layoutX="380.0" layoutY="53.0" prefHeight="300.0" prefWidth="280.0" style="-fx-background-color: #aaccdd;">
+                                    <children>
+                                        <Button fx:id="receiveItemButton" layoutX="46.0" layoutY="143.0" mnemonicParsing="false" onAction="#onReceiveItemClick" prefHeight="35.0" prefWidth="157.0" style="-fx-background-color: #dd000d;" text="Receive item" textFill="WHITE">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Button>
+                                        <TextField fx:id="itemCodeReceiveField" layoutX="47.0" layoutY="28.0" prefHeight="35.0" prefWidth="157.0" promptText="Item code" />
+                                        <Label fx:id="receiveMessageLabel" layoutX="16.0" layoutY="89.0" prefHeight="35.0" prefWidth="243.0" textFill="#dd000d">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="delayLabel" layoutX="47.0" layoutY="193.0" prefHeight="29.0" prefWidth="212.0">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="itemCollectionTab" text="Collection">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label layoutX="25.0" layoutY="13.0" prefHeight="27.0" prefWidth="82.0" text="Items">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <TableView fx:id="itemView" layoutX="24.0" layoutY="45.0" prefHeight="254.0" prefWidth="647.0">
+                                    <columns>
+                                        <TableColumn fx:id="itemCodeColumn" prefWidth="86.39996147155762" text="Item code" />
+                                        <TableColumn fx:id="availableColumn" prefWidth="86.40003204345703" text="Available" />
+                                        <TableColumn fx:id="titleColumn" minWidth="0.0" prefWidth="256.0" text="Title" />
+                                        <TableColumn fx:id="authorColumn" minWidth="0.0" prefWidth="219.19998168945312" text="Author" />
+                                    </columns>
+                                </TableView>
+                                <Button fx:id="addItemButton" layoutX="25.0" layoutY="313.0" mnemonicParsing="false" onAction="#onAddItemClick" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #58d310;" text="Add item" textFill="WHITE">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="editItemButton" layoutX="161.0" layoutY="313.0" mnemonicParsing="false" onAction="#onEditItemClick" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #bcbcbc;" text="Edit item" textFill="WHITE">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="deleteItemButton" layoutX="298.0" layoutY="313.0" mnemonicParsing="false" onAction="#onDeleteItemClick" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #dd000d;" text="Delete item" textFill="WHITE">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                                <Label fx:id="itemMessageLabel" layoutX="239.0" layoutY="11.0" prefHeight="26.0" prefWidth="432.0" textFill="#ef5050">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                        <TextField fx:id="searchField" layoutX="447.0" layoutY="11.0" opacity="0.5" promptText="Search" />
+                        <Button fx:id="searchButton" layoutX="608.0" layoutY="11.0" mnemonicParsing="false" onAction="#onSearchClick" prefHeight="26.0" prefWidth="62.0" text="Search" />
+                        <Button fx:id="refreshButton" layoutX="614.0" layoutY="313.0" mnemonicParsing="false" onAction="#onRefreshClick" prefHeight="35.0" prefWidth="57.0" text="Refresh" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="memberCollectionTab" text="Members">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Button fx:id="addMemberButton" layoutX="21.0" layoutY="312.0" mnemonicParsing="false" onAction="#onAddMemberClick" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #58d310;" text="Add member" textFill="WHITE">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="editMemberButton" layoutX="159.0" layoutY="312.0" mnemonicParsing="false" onAction="#onEditMemberClick" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #bcbcbc;" text="Edit member" textFill="WHITE">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="deleteMemberButton" layoutX="291.0" layoutY="312.0" mnemonicParsing="false" onAction="#onDeleteMemberClick" prefHeight="35.0" prefWidth="117.0" style="-fx-background-color: #dd000d;" text="Delete member" textFill="WHITE">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                                <TableView fx:id="memberView" layoutX="21.0" layoutY="48.0" prefHeight="251.0" prefWidth="646.0">
+                                    <columns>
+                                        <TableColumn fx:id="identifierColumn" prefWidth="70.39996337890625" text="Identifier" />
+                                        <TableColumn fx:id="firstNameColumn" prefWidth="214.39994049072266" text="First name" />
+                                        <TableColumn fx:id="lastNameColumn" minWidth="0.0" prefWidth="215.99996948242188" text="Last name" />
+                                        <TableColumn fx:id="dateOfBirthColumn" minWidth="0.0" prefWidth="144.0" text="Birth date" />
+                                    </columns>
+                                </TableView>
+                                <Label layoutX="21.0" layoutY="14.0" prefHeight="27.0" prefWidth="82.0" text="Members">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="memberMessageLabel" layoutX="240.0" layoutY="14.0" prefHeight="23.0" prefWidth="425.0" textFill="#ef5050">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>

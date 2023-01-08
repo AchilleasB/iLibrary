@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="250.0" minWidth="-Infinity" prefHeight="373.0"
+      prefWidth="283.0" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+    </padding>
+    <children>
+        <Label text="Member Id:"/>
+        <Label fx:id="memberIdentifierLabel" prefHeight="18.0" prefWidth="233.0"/>
+        <Label text="First name:"/>
+        <TextField fx:id="firstNameTextField"/>
+        <Label text="Last name:"/>
+        <TextField fx:id="lastNameTextField"/>
+        <Label text="Date of birth:"/>
+        <DatePicker fx:id="dateOfBirthField"/>
+        <Label fx:id="warningLabel" prefHeight="18.0" prefWidth="207.0" textFill="#ef5050"/>
+        <Label fx:id="exampleLabel" prefHeight="18.0" prefWidth="239.0" textFill="#000000"/>
+        <HBox prefHeight="72.0" prefWidth="150.0" spacing="20.0">
+            <children>
+                <Button fx:id="editMemberButton" mnemonicParsing="false" onAction="#onEditMemberClick" prefHeight="26.0"
+                        prefWidth="115.0" style="-fx-background-color: #58d310; -fx-cursor: hand;" text="Edit member"
+                        textFill="WHITE"/>
+                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#onCancelClick" prefHeight="26.0"
+                        prefWidth="110.0" style="-fx-background-color: #dd000d; -fx-cursor: hand;" text="Cancel"
+                        textFill="WHITE"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>
