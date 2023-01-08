@@ -4,8 +4,7 @@ JavaFX project with:
 
 - Log in view
   * username: admin , password: 1234
-  * username: achil , password: ball123
-  * username: maria , password: mak123
+ 
 
 - Main view
   * lending and receiving items
